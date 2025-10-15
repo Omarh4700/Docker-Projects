@@ -28,7 +28,7 @@ The setup ensures **service discovery via container names** and avoids **IP conf
 
 ### 1- Create the Custom Bridge Network
 `
-docker network create --driver bridge --subnet=192.168.20.0/24 --gateway=192.168.20.1 hr-app-net
+docker network create --driver bridge --internal --subnet=192.168.20.0/24 --gateway=192.168.20.1 hr-app-net
 `
 ### 2- Verify Network Configuration
 `
