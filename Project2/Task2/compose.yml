@@ -1,0 +1,37 @@
+services:
+  login:
+    image: nginx:latest
+    container_name: login
+    ports: 
+      - "100:80"
+    networks:
+      - mynet1
+      - mynet2
+    volumes:
+      - login_data:/usr/local/apache2
+    environment: 
+      VAR1: hello
+      VAR2: test
+    depends_on:
+      - db
+
+  db:
+    image: mysql
+    container_name: db
+    ports:
+      - "3306:3306"
+    networks:
+      - mynet2
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: omar
+
+networks:
+  mynet1:
+  mynet2:
+    internal: true
+
+volumes:
+  login_data:
+  db_data:
