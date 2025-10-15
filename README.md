@@ -1,18 +1,96 @@
-# Project 1
-# Task1 (🧩 Project Overview — HR App Network Setup)
-This task demonstrates how to build a dedicated and isolated Docker network for a Human Resources (HR) application stack. The setup ensures service discovery via container names and avoids IP conflicts with existing VPN or corporate subnets by using a custom-defined network range. 
+# 🧠 Docker Projects Overview
 
-# Project 1
-# Task2 (🌐 Project Overview — Multi-Homed Container Architecture (NGINX Load Balancer))
-This project demonstrates a multi-homed container setup in Docker, where a single service — an NGINX Load Balancer — is connected to two distinct and isolated custom bridge networks.
-The goal is to segregate client traffic (frontend) from internal service communication (backend), ensuring network isolation while allowing controlled routing through the load balancer.
+This repository showcases a series of hands-on Docker projects designed to demonstrate real-world DevOps practices — from building isolated container networks to deploying production-ready microservices.
 
-# Project 2
-# Task1 (🐳 Dockerizing a Simple Python Flask Microservice)
-This project demonstrates how to containerize a lightweight Flask application serving as a health check endpoint (/).
-It is part of a migration from a monolithic system to a Microservices Architecture, designed to be production-ready, secure, and Kubernetes-compatible.
+---
 
-# Project 2
-#Task2 (🧩 Project Overview — NGINX & MySQL Local Development Stack)
-This project demonstrates how to set up a local development environment for a web application using NGINX as the public-facing web server and MySQL as the backend database.
-The focus is on ensuring secure service communication, persistent data storage, and developer accessibility through Docker Compose.
+## 🚀 Project 1 — Network Architecture & Load Balancing
+
+### 🧩 Task 1: HR App Network Setup
+
+**Objective:**  
+Build a **dedicated and isolated Docker network** for a Human Resources (HR) application stack.
+
+**Key Points:**
+- Create a custom bridge network with a **defined subnet range**.
+- Ensure **service discovery** via container names.
+- Avoid **IP conflicts** with existing VPN or corporate subnets.
+- Validate inter-container connectivity within the network.
+
+**Outcome:**  
+A secure and isolated Docker network that enables controlled communication between HR service containers.
+
+---
+
+### 🌐 Task 2: Multi-Homed Container Architecture (NGINX Load Balancer)
+
+**Objective:**  
+Implement a **multi-homed container setup** in Docker using **NGINX** as a load balancer.
+
+**Key Points:**
+- Connect NGINX to **two distinct, isolated networks**:
+  - `frontend-net` (client-facing)
+  - `backend-net` (internal communication)
+- Demonstrate **traffic segregation** between external clients and backend services.
+- Allow controlled routing through the NGINX load balancer.
+
+**Outcome:**  
+An architecture where NGINX bridges multiple networks securely, maintaining isolation between frontend and backend environments.
+
+---
+
+## 🧱 Project 2 — Containerized Application Stack
+
+### 🐳 Task 1: Dockerizing a Simple Python Flask Microservice
+
+**Objective:**  
+Containerize a lightweight **Flask application** serving as a basic health endpoint (`/`).
+
+**Key Points:**
+- Migrate from a **monolithic** structure to a **microservices architecture**.
+- Build a **minimal Docker image** optimized for production.
+- Configure Flask to run on `0.0.0.0:5000` for external access.
+- Prepare for **Kubernetes compatibility** and scalability.
+
+**Outcome:**  
+A secure and production-ready Flask microservice container that can be deployed independently or as part of a larger orchestrated system.
+
+---
+
+### 🧩 Task 2: NGINX & MySQL Local Development Stack
+
+**Objective:**  
+Set up a **local development environment** using **NGINX** (as the web server) and **MySQL** (as the database).
+
+**Key Points:**
+- Use **Docker Compose** for multi-container orchestration.
+- Ensure **persistent storage** for MySQL data using volumes.
+- Configure **secure communication** between NGINX and MySQL.
+- Provide developer-friendly access for testing and iteration.
+
+**Outcome:**  
+A complete local environment that simulates a production-like stack, ideal for web app development and database integration testing.
+
+---
+
+## 🧰 Technologies Used
+
+- **Docker** — Containerization
+- **Docker Compose** — Multi-container orchestration
+- **NGINX** — Reverse proxy & load balancer
+- **Flask (Python)** — Lightweight microservice framework
+- **MySQL** — Relational database
+- **Bridge Networks** — Custom network segmentation
+
+---
+## 📦 Repository Structure
+
+📂 **docker-projects/**  
+├── 📁 **project1/**  
+│   ├── 📁 **task1-hr-app-network/**  
+│   └── 📁 **task2-multi-homed-nginx/**  
+├── 📁 **project2/**  
+│   ├── 📁 **task1-flask-microservice/**  
+│   └── 📁 **task2-nginx-mysql-stack/**  
+└── 📄 **README.md**
+
