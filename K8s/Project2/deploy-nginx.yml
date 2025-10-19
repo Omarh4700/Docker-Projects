@@ -2,19 +2,19 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: nginx-deploy
-  name: nginx-deploy
-  namespace: web-app
+    app: nginx-deployment
+  name: nginx-deployment
+  namespace: webapp
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: nginx-deploy
+      app: nginx-deployment
   strategy: {}
   template:
     metadata:
       labels:
-        app: nginx-deploy
+        app: nginx-deployment
     spec:
       containers:
       - image: nginx:latest
