@@ -1,0 +1,64 @@
+# ============================
+# Namespace Definition
+# ============================
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: webapp
+---
+# ============================
+# Resource Quota for Namespace
+# ============================
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: webapp-quota
+  namespace: webapp
+spec:
+  hard:
+    pods: "10"
+    requests.cpu: "2"
+    requests.memory: 2Gi
+    limits.cpu: "4"
+    limits.memory: 4Gi
+---
+# ============================
+# Nginx Deployment
+# ============================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  namespace: webapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+---
+# ============================
+# Nginx Service
+# ============================
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+  namespace: webapp
+spec:
+  selector:
+    app: nginx
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+  type: ClusterIP
