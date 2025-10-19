@@ -45,6 +45,13 @@ spec:
         image: nginx:latest
         ports:
         - containerPort: 80
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "200m"
+            memory: "256Mi"
 ---
 # ============================
 # Nginx Service
@@ -75,7 +82,7 @@ spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: nginx-deploy
+    name: nginx-deployment
   minReplicas: 2
   maxReplicas: 8
   metrics:
