@@ -3,7 +3,7 @@ kind: ResourceQuota
 metadata:
   creationTimestamp: "2025-10-19T13:19:49Z"
   name: webapp-quota
-  namespace: web-app
+  namespace: webapp
   resourceVersion: "30246"
   uid: c8d9f397-fdb5-4c0b-9907-d9eb38c5e1fa
 spec:
