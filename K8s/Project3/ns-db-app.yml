@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  creationTimestamp: "2025-10-20T13:40:26Z"
+  labels:
+    kubernetes.io/metadata.name: db-app
+  name: db-app
+  resourceVersion: "19354"
+  uid: c7be880c-14e8-4df3-8c2a-0d43b6582fbd
+spec:
+  finalizers:
+  - kubernetes
+status:
+  phase: Active
