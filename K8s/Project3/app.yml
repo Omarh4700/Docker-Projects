@@ -23,7 +23,7 @@ spec:
         - containerPort: 3306
         envFrom:
         - secretRef:
-            name: mysql-secrit
+            name: mysql-secret
         - configMapRef:
             name: mysql-config
       tolerations:
